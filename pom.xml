@@ -6,7 +6,7 @@
 
   <groupId>io.quarkus</groupId>
   <artifactId>quarkus-spring-di-api</artifactId>
-  <version>5.1.Alpha1</version>
+  <version>5.1.Alpha1-SNAPSHOT</version>
 
   <licenses>
     <license>
@@ -16,9 +16,17 @@
     </license>
   </licenses>
 
+  <scm>
+    <url>https://github.com/quarkusio/quarkus-spring-di-api</url>
+    <connection>scm:git:git@github.com:quarkusio/quarkus-spring-di-api.git</connection>
+    <developerConnection>scm:git:git@github.com:quarkusio/quarkus-spring-di-api.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+
   <properties>
     <spring-boot-bom.version>2.1.12.Final</spring-boot-bom.version>
     <maven-shade-plugin.version>3.2.1</maven-shade-plugin.version>
+    <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
   </properties>
 
   <dependencyManagement>
@@ -145,4 +153,62 @@
       </plugin>
     </plugins>
   </build>
+  <profiles>
+    <profile>
+      <id>release</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>${nexus-staging-maven-plugin.version}</version>
+            <extensions>true</extensions>
+            <configuration>
+              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+              <serverId>ossrh</serverId>
+              <autoReleaseAfterClose>true</autoReleaseAfterClose>
+              <keepStagingRepositoryOnCloseRuleFailure>true</keepStagingRepositoryOnCloseRuleFailure>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
