@@ -8,6 +8,18 @@
   <artifactId>quarkus-spring-di-api</artifactId>
   <version>5.1.Alpha1-SNAPSHOT</version>
 
+  <name>Spring DI dependencies for Quarkus Spring DI extension</name>
+  <description>The minimum dependencies to reduce the footprint of Quarkus applications using the Spring DI extension</description>
+  <url>https://quarkus.io/</url>
+  <developers>
+    <developer>
+      <id>jboss.org</id>
+      <name>JBoss.org Community</name>
+      <organization>JBoss.org</organization>
+      <organizationUrl>http://www.jboss.org</organizationUrl>
+    </developer>
+  </developers>
+
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
