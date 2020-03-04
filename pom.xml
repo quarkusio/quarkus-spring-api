@@ -6,7 +6,7 @@
   <artifactId>quarkus-spring-di-api</artifactId>
   <version>5.2.Alpha1-SNAPSHOT</version>
 
-  <name>Spring DI dependencies for Quarkus Spring DI extension</name>
+  <name>Spring dependencies for Quarkus Spring DI extension</name>
   <description>The minimum dependencies to reduce the footprint of Quarkus applications using the Spring DI extension</description>
   <url>https://quarkus.io/</url>
   <developers>
@@ -71,101 +71,6 @@
   </dependencies>
 </dependencyManagement>
 
-<!--  <build>-->
-<!--    <plugins>-->
-<!--      <plugin>-->
-<!--        <groupId>org.apache.maven.plugins</groupId>-->
-<!--        <artifactId>maven-shade-plugin</artifactId>-->
-<!--        <version>${maven-shade-plugin.version}</version>-->
-<!--        <executions>-->
-<!--          <execution>-->
-<!--            <phase>package</phase>-->
-<!--            <goals>-->
-<!--              <goal>shade</goal>-->
-<!--            </goals>-->
-<!--            <configuration>-->
-<!--              <createSourcesJar>true</createSourcesJar>-->
-<!--              <artifactSet>-->
-<!--                <includes>-->
-<!--                  <include>org.springframework:spring-core</include>-->
-<!--                  <include>org.springframework:spring-beans</include>-->
-<!--                  <include>org.springframework:spring-context</include>-->
-<!--                </includes>-->
-<!--              </artifactSet>-->
-<!--              <filters>-->
-<!--                <filter>-->
-<!--                  <artifact>org.springframework:spring-core</artifact>-->
-<!--                  <includes>-->
-<!--                    &lt;!&ndash; Transitive dependencies &ndash;&gt;-->
-<!--                    <include>org/springframework/core/BridgeMethodResolver**</include>-->
-<!--                    <include>org/springframework/core/MethodParameter**</include>-->
-<!--                    <include>org/springframework/core/NestedExceptionUtils**</include>-->
-<!--                    <include>org/springframework/core/NestedRuntimeException**</include>-->
-<!--                    <include>org/springframework/core/ParameterNameDiscoverer**</include>-->
-<!--                    <include>org/springframework/core/ResolvableType**</include>-->
-<!--                    <include>org/springframework/core/SerializableTypeWrapper**</include>-->
-<!--                    <include>org/springframework/core/annotation/AliasFor**</include>-->
-<!--                    <include>org/springframework/core/annotation/AnnotationAttributes**</include>-->
-<!--                    <include>org/springframework/core/annotation/AnnotatedElementUtils**</include>-->
-<!--                    <include>org/springframework/core/convert/TypeDescriptor**</include>-->
-<!--                    <include>org/springframework/util/ClassUtils**</include>-->
-<!--                    <include>org/springframework/util/CollectionUtils**</include>-->
-<!--                    <include>org/springframework/util/ConcurrentReferenceHashMap**</include>-->
-<!--                    <include>org/springframework/util/LinkedMultiValueMap**</include>-->
-<!--                    <include>org/springframework/util/MultiValueMap**</include>-->
-<!--                    <include>org/springframework/util/ObjectUtils**</include>-->
-<!--                    <include>org/springframework/util/ReflectionUtils**</include>-->
-<!--                    <include>org/springframework/util/StringUtils**</include>-->
-<!--                  </includes>-->
-<!--                </filter>-->
-<!--                <filter>-->
-<!--                  <artifact>org.springframework:spring-beans</artifact>-->
-<!--                  <includes>-->
-<!--                    &lt;!&ndash; Used in Quarkus &ndash;&gt;-->
-<!--                    <include>org/springframework/beans/factory/annotation/Autowired**</include>-->
-<!--                    <include>org/springframework/beans/factory/annotation/Qualifier**</include>-->
-<!--                    <include>org/springframework/beans/factory/annotation/Value**</include>-->
-<!--                    &lt;!&ndash; Transitive dependencies &ndash;&gt;-->
-<!--                    <include>org/springframework/beans/BeansException**</include>-->
-<!--                    <include>org/springframework/beans/PropertyAccessException**</include>-->
-<!--                    <include>org/springframework/beans/TypeConverter**</include>-->
-<!--                    <include>org/springframework/beans/TypeMismatchException**</include>-->
-<!--                    <include>org/springframework/beans/factory/ObjectFactory**</include>-->
-<!--                    <include>org/springframework/beans/factory/NoSuchBeanDefinitionException**</include>-->
-<!--                    <include>org/springframework/beans/factory/NoUniqueBeanDefinitionException**</include>-->
-<!--                    <include>org/springframework/beans/factory/annotation/Autowire**</include>-->
-<!--                    <include>org/springframework/beans/factory/config/AutowireCapableBeanFactory**</include>-->
-<!--                    <include>org/springframework/beans/factory/config/DependencyDescriptor**</include>-->
-<!--                    <include>org/springframework/beans/factory/support/AbstractBeanDefinition**</include>-->
-<!--                  </includes>-->
-<!--                </filter>-->
-<!--                <filter>-->
-<!--                  <artifact>org.springframework:spring-context</artifact>-->
-<!--                  <includes>-->
-<!--                    &lt;!&ndash; Used in Quarkus &ndash;&gt;-->
-<!--                    <include>org/springframework/context/annotation/Bean**</include>-->
-<!--                    <include>org/springframework/context/annotation/Configuration**</include>-->
-<!--                    <include>org/springframework/context/annotation/Scope**</include>-->
-<!--                    <include>org/springframework/stereotype/Component**</include>-->
-<!--                    <include>org/springframework/stereotype/Indexed**</include>-->
-<!--                    <include>org/springframework/stereotype/Repository**</include>-->
-<!--                    <include>org/springframework/stereotype/Service**</include>-->
-<!--                    &lt;!&ndash; Transitive dependencies &ndash;&gt;-->
-<!--                    <include>org/springframework/context/ApplicationContext**</include>-->
-<!--                    <include>org/springframework/context/ApplicationEvent**</include>-->
-<!--                    <include>org/springframework/context/ApplicationEventPublisher**</include>-->
-<!--                    <include>org/springframework/context/MessageSource**</include>-->
-<!--                    <include>org/springframework/context/NoSuchMessageException**</include>-->
-<!--                    <include>org/springframework/context/annotation/ScopedProxyMode**</include>-->
-<!--                  </includes>-->
-<!--                </filter>-->
-<!--              </filters>-->
-<!--            </configuration>-->
-<!--          </execution>-->
-<!--        </executions>-->
-<!--      </plugin>-->
-<!--    </plugins>-->
-<!--  </build>-->
   <profiles>
     <profile>
       <id>release</id>
