@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>quarkus-spring-di-api</artifactId>
+        <groupId>io.quarkus</groupId>
+        <version>5.2.Alpha1-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-spring-context-api</artifactId>
+    <version>5.2.Alpha1-SNAPSHOT</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createSourcesJar>true</createSourcesJar>
+                            <artifactSet>
+                                <includes>
+                                    <include>org.springframework:spring-context</include>
+                                </includes>
+                            </artifactSet>
+                            <filters>
+                                <filter>
+                                    <artifact>org.springframework:spring-context</artifact>
+                                    <includes>
+                                        <!-- Used in Quarkus -->
+                                        <include>org/springframework/context/annotation/Bean**</include>
+                                        <include>org/springframework/context/annotation/Configuration**</include>
+                                        <include>org/springframework/context/annotation/Scope**</include>
+                                        <include>org/springframework/stereotype/Component**</include>
+                                        <include>org/springframework/stereotype/Indexed**</include>
+                                        <include>org/springframework/stereotype/Repository**</include>
+                                        <include>org/springframework/stereotype/Service**</include>
+                                        <!-- Transitive dependencies -->
+                                        <include>org/springframework/context/ApplicationContext**</include>
+                                        <include>org/springframework/context/ApplicationEvent**</include>
+                                        <include>org/springframework/context/ApplicationEventPublisher**</include>
+                                        <include>org/springframework/context/MessageSource**</include>
+                                        <include>org/springframework/context/NoSuchMessageException**</include>
+                                        <include>org/springframework/context/annotation/ScopedProxyMode**</include>
+                                    </includes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    
+</project>

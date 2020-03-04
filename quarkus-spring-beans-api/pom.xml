@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-spring-beans-api</artifactId>
+    <version>5.2.Alpha1-SNAPSHOT</version>
+
+    <parent>
+        <artifactId>quarkus-spring-di-api</artifactId>
+        <groupId>io.quarkus</groupId>
+        <version>5.2.Alpha1-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createSourcesJar>true</createSourcesJar>
+                            <artifactSet>
+                                <includes>
+                                    <include>org.springframework:spring-beans</include>
+                                </includes>
+                            </artifactSet>
+                            <filters>
+                                <filter>
+                                    <artifact>org.springframework:spring-beans</artifact>
+                                    <includes>
+                                        <!-- Used in Quarkus -->
+                                        <include>org/springframework/beans/factory/annotation/Autowired**</include>
+                                        <include>org/springframework/beans/factory/annotation/Qualifier**</include>
+                                        <include>org/springframework/beans/factory/annotation/Value**</include>
+                                        <!-- Transitive dependencies -->
+                                        <include>org/springframework/beans/BeansException**</include>
+                                        <include>org/springframework/beans/PropertyAccessException**</include>
+                                        <include>org/springframework/beans/TypeConverter**</include>
+                                        <include>org/springframework/beans/TypeMismatchException**</include>
+                                        <include>org/springframework/beans/factory/ObjectFactory**</include>
+                                        <include>org/springframework/beans/factory/NoSuchBeanDefinitionException**</include>
+                                        <include>org/springframework/beans/factory/NoUniqueBeanDefinitionException**</include>
+                                        <include>org/springframework/beans/factory/annotation/Autowire**</include>
+                                        <include>org/springframework/beans/factory/config/AutowireCapableBeanFactory**</include>
+                                        <include>org/springframework/beans/factory/config/DependencyDescriptor**</include>
+                                        <include>org/springframework/beans/factory/support/AbstractBeanDefinition**</include>
+                                    </includes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

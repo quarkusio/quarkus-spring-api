@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>quarkus-spring-di-api</artifactId>
+        <groupId>io.quarkus</groupId>
+        <version>5.2.Alpha1-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-spring-core-api</artifactId>
+    <version>5.2.Alpha1-SNAPSHOT</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createSourcesJar>true</createSourcesJar>
+                            <artifactSet>
+                                <includes>
+                                    <include>org.springframework:spring-core</include>
+                                </includes>
+                            </artifactSet>
+                            <filters>
+                                <filter>
+                                    <artifact>org.springframework:spring-core</artifact>
+                                    <includes>
+                                        <!-- Transitive dependencies -->
+                                        <include>org/springframework/core/BridgeMethodResolver**</include>
+                                        <include>org/springframework/core/MethodParameter**</include>
+                                        <include>org/springframework/core/NestedExceptionUtils**</include>
+                                        <include>org/springframework/core/NestedRuntimeException**</include>
+                                        <include>org/springframework/core/ParameterNameDiscoverer**</include>
+                                        <include>org/springframework/core/ResolvableType**</include>
+                                        <include>org/springframework/core/SerializableTypeWrapper**</include>
+                                        <include>org/springframework/core/annotation/AliasFor**</include>
+                                        <include>org/springframework/core/annotation/AnnotationAttributes**</include>
+                                        <include>org/springframework/core/annotation/AnnotatedElementUtils**</include>
+                                        <include>org/springframework/core/convert/TypeDescriptor**</include>
+                                        <include>org/springframework/util/ClassUtils**</include>
+                                        <include>org/springframework/util/CollectionUtils**</include>
+                                        <include>org/springframework/util/ConcurrentReferenceHashMap**</include>
+                                        <include>org/springframework/util/LinkedMultiValueMap**</include>
+                                        <include>org/springframework/util/MultiValueMap**</include>
+                                        <include>org/springframework/util/ObjectUtils**</include>
+                                        <include>org/springframework/util/ReflectionUtils**</include>
+                                        <include>org/springframework/util/StringUtils**</include>
+                                    </includes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    
+</project>
