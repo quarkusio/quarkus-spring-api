@@ -3,15 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>quarkus-spring-di-api</artifactId>
+        <artifactId>quarkus-spring-api</artifactId>
         <groupId>io.quarkus</groupId>
-        <version>5.3.Alpha1-SNAPSHOT</version>
+        <version>5.2.Alpha2-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
 
     <groupId>io.quarkus</groupId>
     <artifactId>quarkus-spring-core-api</artifactId>
-    <version>5.3.Alpha1-SNAPSHOT</version>
+    <version>5.2.Alpha2-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
@@ -62,6 +62,27 @@
                                         <include>org/springframework/util/ObjectUtils**</include>
                                         <include>org/springframework/util/ReflectionUtils**</include>
                                         <include>org/springframework/util/StringUtils**</include>
+                                        <include>org/springframework/core/Conventions**</include>
+                                        <include>org/springframework/core/DecoratingProxy**</include>
+                                        <include>org/springframework/core/NestedIOException**</include>
+                                        <include>org/springframework/core/Ordered**</include>
+                                        <include>org/springframework/core/OrderComparator**</include>
+                                        <include>org/springframework/core/annotation/AnnotationAwareOrderComparator**</include>
+                                        <include>org/springframework/core/annotation/AnnotationUtils**</include>
+                                        <include>org/springframework/core/annotation/OrderUtils**</include>
+                                        <include>org/springframework/core/io/AbstractResource**</include>
+                                        <include>org/springframework/core/io/InputStreamResource**</include>
+                                        <include>org/springframework/core/io/InputStreamSource**</include>
+                                        <include>org/springframework/core/io/Resource**</include>
+                                        <include>org/springframework/core/io/support/ResourceRegion**</include>
+                                        <include>org/springframework/lang/Nullable**</include>
+                                        <include>org/springframework/util/Assert**</include>
+                                        <include>org/springframework/util/InvalidMimeTypeException**class</include>
+                                        <include>org/springframework/util/LinkedCaseInsensitiveMap**</include>
+                                        <include>org/springframework/util/MimeType**</include>
+                                        <include>org/springframework/util/MimeTypeUtils**</include>
+                                        <include>org/springframework/util/PriorityOrdered**</include>
+                                        <include>org/springframework/util/ResourceUtils**</include>
                                     </includes>
                                 </filter>
                             </filters>

@@ -3,15 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>quarkus-spring-di-api</artifactId>
+        <artifactId>quarkus-spring-api</artifactId>
         <groupId>io.quarkus</groupId>
-        <version>5.3.Alpha1-SNAPSHOT</version>
+        <version>5.2.Alpha2-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
 
     <groupId>io.quarkus</groupId>
     <artifactId>quarkus-spring-context-api</artifactId>
-    <version>5.3.Alpha1-SNAPSHOT</version>
+    <version>5.2.Alpha2-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
@@ -50,12 +50,16 @@
                                         <include>org/springframework/stereotype/Indexed**</include>
                                         <include>org/springframework/stereotype/Repository**</include>
                                         <include>org/springframework/stereotype/Service**</include>
+                                        <include>org/springframework/ui/Model**</include>
                                         <!-- Transitive dependencies -->
                                         <include>org/springframework/context/ApplicationContext**</include>
                                         <include>org/springframework/context/ApplicationEvent**</include>
                                         <include>org/springframework/context/ApplicationEventPublisher**</include>
                                         <include>org/springframework/context/MessageSource**</include>
                                         <include>org/springframework/context/NoSuchMessageException**</include>
+                                        <include>org/springframework/context/annotation/ScopedProxyMode**</include>
+                                        <include>org/springframework/ui/ModelMap**</include>
+                                        <include>org/springframework/stereotype/Controller**</include>
                                         <include>org/springframework/context/annotation/ScopedProxyMode**</include>
                                     </includes>
                                 </filter>

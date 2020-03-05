@@ -3,8 +3,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.quarkus</groupId>
-  <artifactId>quarkus-spring-di-api</artifactId>
-  <version>5.3.Alpha1-SNAPSHOT</version>
+  <artifactId>quarkus-spring-api</artifactId>
+  <version>5.2.Alpha2-SNAPSHOT</version>
 
   <name>Spring dependencies for Quarkus Spring DI extension</name>
   <description>The minimum dependencies to reduce the footprint of Quarkus applications using the Spring DI extension</description>
@@ -27,9 +27,9 @@
   </licenses>
 
   <scm>
-    <url>https://github.com/quarkusio/quarkus-spring-di-api</url>
-    <connection>scm:git:git@github.com:quarkusio/quarkus-spring-di-api.git</connection>
-    <developerConnection>scm:git:git@github.com:quarkusio/quarkus-spring-di-api.git</developerConnection>
+    <url>https://github.com/quarkusio/quarkus-spring-api</url>
+    <connection>scm:git:git@github.com:quarkusio/quarkus-spring-api.git</connection>
+    <developerConnection>scm:git:git@github.com:quarkusio/quarkus-spring-api.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
 
@@ -49,6 +49,8 @@
     <module>quarkus-spring-core-api</module>
     <module>quarkus-spring-beans-api</module>
     <module>quarkus-spring-context-api</module>
+    <module>quarkus-spring-web-api</module>
+    <module>quarkus-spring-webmvc-api</module>
   </modules>
 
 <dependencyManagement>
@@ -66,6 +68,16 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
+      <version>${spring-framework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${spring-framework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
       <version>${spring-framework.version}</version>
     </dependency>
   </dependencies>

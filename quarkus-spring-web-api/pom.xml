@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-spring-api</artifactId>
+        <version>5.2.Alpha2-SNAPSHOT</version>
+    </parent>
+
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-spring-web-api</artifactId>
+    <version>5.2.Alpha2-SNAPSHOT</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>${maven-shade-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createSourcesJar>true</createSourcesJar>
+                            <artifactSet>
+                                <includes>
+                                    <include>org.springframework:spring-web</include>
+                                </includes>
+                            </artifactSet>
+                            <filters>
+                                <filter>
+                                    <artifact>org.springframework:spring-web</artifact>
+                                    <includes>
+                                        <!-- Used in Quarkus -->
+                                        <include>org/springframework/http/HttpEntity**</include>
+                                        <include>org/springframework/http/HttpHeaders**</include>
+                                        <include>org/springframework/http/HttpStatus**</include>
+                                        <include>org/springframework/http/ResponseEntity**</include>
+                                        <include>org/springframework/web/SpringServletContainerInitializer**</include>
+                                        <include>org/springframework/web/context/annotation/RequestScope**</include>
+                                        <include>org/springframework/web/bind/annotation/CookieValue**</include>
+                                        <include>org/springframework/web/bind/annotation/DeleteMapping**</include>
+                                        <include>org/springframework/web/bind/annotation/ExceptionHandler**</include>
+                                        <include>org/springframework/web/bind/annotation/GetMapping**</include>
+                                        <include>org/springframework/web/bind/annotation/RestController**</include>
+                                        <include>org/springframework/web/bind/annotation/RequestMapping**</include>
+                                        <include>org/springframework/web/bind/annotation/PathVariable**</include>
+                                        <include>org/springframework/web/bind/annotation/MatrixVariable**</include>
+                                        <include>org/springframework/web/bind/annotation/PatchMapping**</include>
+                                        <include>org/springframework/web/bind/annotation/PostMapping**</include>
+                                        <include>org/springframework/web/bind/annotation/PutMapping**</include>
+                                        <include>org/springframework/web/bind/annotation/RequestBody**</include>
+                                        <include>org/springframework/web/bind/annotation/RequestHeader**</include>
+                                        <include>org/springframework/web/bind/annotation/RequestParam**</include>
+                                        <include>org/springframework/web/bind/annotation/ResponseStatus**</include>
+                                        <include>org/springframework/web/bind/annotation/RestControllerAdvice**
+                                        </include>
+                                        <!-- Transitive dependencies -->
+                                        <include>org/springframework/http/CacheControl**</include>
+                                        <include>org/springframework/http/ContentDisposition**</include>
+                                        <include>org/springframework/http/HttpInputMessage**</include>
+                                        <include>org/springframework/http/HttpMessage**</include>
+                                        <include>org/springframework/http/HttpOutputMessage**</include>
+                                        <include>org/springframework/http/HttpRange**</include>
+                                        <include>org/springframework/http/InvalidMediaTypeException**</include>
+                                        <include>org/springframework/http/ReadOnlyHttpHeaders**</include>
+                                        <include>org/springframework/http/RequestEntity**</include>
+                                        <include>org/springframework/http/MediaType**</include>
+                                        <include>org/springframework/http/converter/HttpMessageConversionException**
+                                        </include>
+                                        <include>org/springframework/http/converter/HttpMessageConverter**</include>
+                                        <include>org/springframework/http/converter/HttpMessageNotReadableException**
+                                        </include>
+                                        <include>org/springframework/http/converter/HttpMessageNotWritableException**
+                                        </include>
+                                        <include>org/springframework/web/WebApplicationInitializer**</include>
+                                        <include>org/springframework/web/bind/annotation/ControllerAdvice**</include>
+                                        <include>org/springframework/web/bind/annotation/RequestMethod**</include>
+                                        <include>org/springframework/web/bind/annotation/ResponseBody**</include>
+                                        <include>org/springframework/web/context/WebApplicationContext**</include>
+                                    </includes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
