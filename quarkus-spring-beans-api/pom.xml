@@ -4,12 +4,12 @@
 
     <groupId>io.quarkus</groupId>
     <artifactId>quarkus-spring-beans-api</artifactId>
-    <version>5.2.Final</version>
+    <version>5.3.Alpha1-SNAPSHOT</version>
 
     <parent>
         <artifactId>quarkus-spring-api</artifactId>
         <groupId>io.quarkus</groupId>
-        <version>5.2.Final</version>
+        <version>5.3.Alpha1-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
 
