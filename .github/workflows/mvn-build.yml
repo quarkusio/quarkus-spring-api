@@ -1,0 +1,23 @@
+name: "CI - JDK 11 Build"
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+
+jobs:
+  build-jdk11:
+    name: "JDK 11 Build"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 11
+        uses: joschi/setup-jdk@7134ae95986e4e0a4f9f0b51345c93fcebfc4ea9
+        with:
+          java-version: openjdk11
+      - name: Build
+        run: mvn clean install
+
