@@ -46,6 +46,7 @@
                                         <include>org/springframework/http/HttpEntity**</include>
                                         <include>org/springframework/http/HttpHeaders**</include>
                                         <include>org/springframework/http/HttpStatus**</include>
+                                        <include>org/springframework/http/HttpMethod**</include>
                                         <include>org/springframework/http/ResponseEntity**</include>
                                         <include>org/springframework/web/SpringServletContainerInitializer**</include>
                                         <include>org/springframework/web/context/annotation/RequestScope**</include>
