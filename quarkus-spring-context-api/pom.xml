@@ -43,6 +43,9 @@
                                     <artifact>org.springframework:spring-context</artifact>
                                     <includes>
                                         <!-- Used in Quarkus -->
+                                        <include>org/springframework/cache/annotation/Cacheable**</include>
+                                        <include>org/springframework/cache/annotation/CacheEvict**</include>
+                                        <include>org/springframework/cache/annotation/CachePut**</include>
                                         <include>org/springframework/context/annotation/Bean**</include>
                                         <include>org/springframework/context/annotation/Configuration**</include>
                                         <include>org/springframework/context/annotation/Scope**</include>
