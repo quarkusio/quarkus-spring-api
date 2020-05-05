@@ -65,8 +65,8 @@
                                         <include>org/springframework/web/bind/annotation/RequestHeader**</include>
                                         <include>org/springframework/web/bind/annotation/RequestParam**</include>
                                         <include>org/springframework/web/bind/annotation/ResponseStatus**</include>
-                                        <include>org/springframework/web/bind/annotation/RestControllerAdvice**
-                                        </include>
+                                        <include>org/springframework/web/bind/annotation/RestControllerAdvice**</include>
+                                        <include>org/springframework/web/server/ResponseStatusException**</include>
                                         <!-- Transitive dependencies -->
                                         <include>org/springframework/http/CacheControl**</include>
                                         <include>org/springframework/http/ContentDisposition**</include>
