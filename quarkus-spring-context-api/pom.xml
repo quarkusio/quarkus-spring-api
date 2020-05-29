@@ -55,6 +55,7 @@
                                         <include>org/springframework/stereotype/Service**</include>
                                         <include>org/springframework/ui/Model**</include>
                                         <include>org/springframework/scheduling/annotation/Scheduled**</include>
+                                        <include>org/springframework/scheduling/annotation/Schedules**</include>
                                         <!-- Transitive dependencies -->
                                         <include>org/springframework/context/ApplicationContext**</include>
                                         <include>org/springframework/context/ApplicationEvent**</include>
