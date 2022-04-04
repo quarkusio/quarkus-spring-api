@@ -54,6 +54,7 @@
                                         <include>org/springframework/core/annotation/AnnotationAttributes**</include>
                                         <include>org/springframework/core/annotation/AnnotatedElementUtils**</include>
                                         <include>org/springframework/core/convert/TypeDescriptor**</include>
+                                        <include>org/springframework/util/StreamUtils**</include>
                                         <include>org/springframework/util/Assert**</include>
                                         <include>org/springframework/util/ClassUtils**</include>
                                         <include>org/springframework/util/CollectionUtils**</include>
