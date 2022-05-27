@@ -55,6 +55,7 @@
                                         <include>org/springframework/web/bind/annotation/ExceptionHandler**</include>
                                         <include>org/springframework/web/bind/annotation/GetMapping**</include>
                                         <include>org/springframework/web/bind/annotation/RestController**</include>
+                                        <include>org/springframework/web/bind/annotation/Mapping**</include>
                                         <include>org/springframework/web/bind/annotation/RequestMapping**</include>
                                         <include>org/springframework/web/bind/annotation/PathVariable**</include>
                                         <include>org/springframework/web/bind/annotation/MatrixVariable**</include>
