@@ -5,12 +5,12 @@
     <parent>
         <groupId>io.quarkus</groupId>
         <artifactId>quarkus-spring-api</artifactId>
-        <version>5.2.SP8-SNAPSHOT</version>
+        <version>6.0.Final-SNAPSHOT</version>
     </parent>
 
     <groupId>io.quarkus</groupId>
     <artifactId>quarkus-spring-web-api</artifactId>
-    <version>5.2.SP8-SNAPSHOT</version>
+    <version>6.0.Final-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
@@ -76,6 +76,7 @@
                                         <include>org/springframework/http/HttpOutputMessage**</include>
                                         <include>org/springframework/http/HttpRange**</include>
                                         <include>org/springframework/http/InvalidMediaTypeException**</include>
+                                        <include>org/springframework/http/ProblemDetail**</include>
                                         <include>org/springframework/http/ReadOnlyHttpHeaders**</include>
                                         <include>org/springframework/http/RequestEntity**</include>
                                         <include>org/springframework/http/MediaType**</include>
@@ -86,6 +87,8 @@
                                         </include>
                                         <include>org/springframework/http/converter/HttpMessageNotWritableException**
                                         </include>
+                                        <include>org/springframework/web/ErrorResponse**</include>
+                                        <include>org/springframework/web/ErrorResponseException**</include>
                                         <include>org/springframework/web/WebApplicationInitializer**</include>
                                         <include>org/springframework/web/bind/annotation/ControllerAdvice**</include>
                                         <include>org/springframework/web/bind/annotation/RequestMethod**</include>
