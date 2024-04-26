@@ -48,7 +48,10 @@
                                         <include>org/springframework/http/HttpStatus**</include>
                                         <include>org/springframework/http/HttpMethod**</include>
                                         <include>org/springframework/http/ResponseEntity**</include>
+                                        <include>org/springframework/http/ProblemDetail**</include>
                                         <include>org/springframework/web/SpringServletContainerInitializer**</include>
+                                        <include>org/springframework/web/ErrorResponseException**</include>
+                                        <include>org/springframework/web/ErrorResponse**</include>
                                         <include>org/springframework/web/context/annotation/RequestScope**</include>
                                         <include>org/springframework/web/bind/annotation/CookieValue**</include>
                                         <include>org/springframework/web/bind/annotation/DeleteMapping**</include>
