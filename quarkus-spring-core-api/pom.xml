@@ -59,6 +59,7 @@
                                         <include>org/springframework/util/ClassUtils**</include>
                                         <include>org/springframework/util/CollectionUtils**</include>
                                         <include>org/springframework/util/ConcurrentReferenceHashMap**</include>
+                                        <include>org/springframework/util/ConcurrentLruCache**</include>
                                         <include>org/springframework/util/LinkedMultiValueMap**</include>
                                         <include>org/springframework/util/MultiValueMap**</include>
                                         <include>org/springframework/util/ObjectUtils**</include>
