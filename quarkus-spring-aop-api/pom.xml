@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-spring-aop-api</artifactId>
+    <version>6.1.SP1-SNAPSHOT</version>
+
+    <parent>
+        <artifactId>quarkus-spring-api</artifactId>
+        <groupId>io.quarkus</groupId>
+        <version>6.1.SP2-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createSourcesJar>true</createSourcesJar>
+                            <artifactSet>
+                                <includes>
+                                    <include>org.springframework:spring-aop</include>
+                                </includes>
+                            </artifactSet>
+                            <filters>
+                                <filter>
+                                    <artifact>org.springframework:spring-aop</artifact>
+                                    <includes>
+                                        <!-- Transitive dependencies -->
+                                        <include>org/springframework/aop/framework/ProxyFactory**</include>
+                                        <include>org/springframework/aop/framework/ProxyCreatorSupport**</include>
+                                        <include>org/springframework/aop/framework/AdvisedSupport**</include>
+                                        <include>org/springframework/aop/framework/Advised**</include>
+                                        <include>org/springframework/aop/framework/AdvisorChainFactory**</include>
+                                        <include>org/springframework/aop/framework/DefaultAdvisorChainFactory**</include>
+                                        <include>org/springframework/aop/framework/ProxyConfig**</include>
+                                        <include>org/springframework/aop/framework/AopProxyFactory**</include>
+                                        <include>org/springframework/aop/framework/AdvisedSupportListener**</include>
+                                        <include>org/springframework/aop/framework/DefaultAopProxyFactory**</include>
+                                        <include>org/springframework/aop/framework/AopProxy**</include>
+                                        <include>org/springframework/aop/framework/AopConfigException**</include>
+                                        <include>org/springframework/aop/TargetSource**</include>
+                                        <include>org/springframework/aop/Advisor**</include>
+                                        <include>org/springframework/aop/DynamicIntroductionAdvice**</include>
+                                        <include>org/springframework/aop/IntroductionAdvisor**</include>
+                                        <include>org/springframework/aop/IntroductionInfo**</include>
+                                        <include>org/springframework/aop/Pointcut**</include>
+                                        <include>org/springframework/aop/PointcutAdvisor**</include>
+                                        <include>org/springframework/aop/ClassFilter**</include>
+                                        <include>org/springframework/aop/MethodMatcher**</include>
+                                        <include>org/springframework/aop/TruePointcut**</include>
+                                        <include>org/springframework/aop/TargetSource**</include>
+                                        <include>org/springframework/aop/TargetClassAware**</include>
+                                        <include>org/springframework/aop/support/DefaultIntroductionAdvisor**</include>
+                                        <include>org/springframework/aop/support/DefaultPointcutAdvisor**</include>
+                                        <include>org/springframework/aop/support/AbstractGenericPointcutAdvisor**</include>
+                                        <include>org/springframework/aop/support/AbstractPointcutAdvisor**</include>
+                                        <include>org/springframework/aop/target/EmptyTargetSource**</include>
+                                        <include>org/springframework/aop/target/SingletonTargetSource**</include>
+                                    </includes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    
+</project>
