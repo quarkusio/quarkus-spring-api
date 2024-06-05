@@ -6,7 +6,7 @@
   <artifactId>quarkus-spring-api</artifactId>
   <version>6.1.SP2-SNAPSHOT</version>
 
-  <name>Spring dependencies for Quarkus Spring DI extension</name>
+  <name>Spring dependencies for Quarkus Spring extensions</name>
   <description>The minimum dependencies to reduce the footprint of Quarkus applications using the Spring DI extension</description>
   <url>https://quarkus.io/</url>
   <developers>
@@ -52,6 +52,7 @@
     <module>quarkus-spring-context-api</module>
     <module>quarkus-spring-web-api</module>
     <module>quarkus-spring-webmvc-api</module>
+    <module>quarkus-spring-aop-api</module>
   </modules>
 
 <dependencyManagement>
@@ -79,6 +80,11 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
+      <version>${spring-framework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
       <version>${spring-framework.version}</version>
     </dependency>
   </dependencies>

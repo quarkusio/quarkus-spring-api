@@ -40,7 +40,6 @@
                             </artifactSet>
                             <filters>
                                 <filter>
-                                    <artifact>org.springframework:spring-core</artifact>
                                     <includes>
                                         <!-- Transitive dependencies -->
                                         <include>org/springframework/core/BridgeMethodResolver**</include>
@@ -50,6 +49,7 @@
                                         <include>org/springframework/core/ParameterNameDiscoverer**</include>
                                         <include>org/springframework/core/ResolvableType**</include>
                                         <include>org/springframework/core/SerializableTypeWrapper**</include>
+                                        <include>org/springframework/core/CollectionFactory**</include>
                                         <include>org/springframework/core/annotation/AliasFor**</include>
                                         <include>org/springframework/core/annotation/AnnotationAttributes**</include>
                                         <include>org/springframework/core/annotation/AnnotatedElementUtils**</include>
@@ -79,6 +79,7 @@
                                         <include>org/springframework/core/io/Resource**</include>
                                         <include>org/springframework/core/io/support/ResourceRegion**</include>
                                         <include>org/springframework/lang/Nullable**</include>
+                                        <include>org/springframework/lang/NonNull**</include>
                                         <include>org/springframework/util/Assert**</include>
                                         <include>org/springframework/util/InvalidMimeTypeException**class</include>
                                         <include>org/springframework/util/LinkedCaseInsensitiveMap**</include>
@@ -87,6 +88,7 @@
                                         <include>org/springframework/util/PriorityOrdered**</include>
                                         <include>org/springframework/util/ResourceUtils**</include>
                                     </includes>
+                                    <artifact>org.springframework:spring-core</artifact>
                                 </filter>
                             </filters>
                         </configuration>
