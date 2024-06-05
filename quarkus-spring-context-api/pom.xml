@@ -5,13 +5,13 @@
     <parent>
         <artifactId>quarkus-spring-api</artifactId>
         <groupId>io.quarkus</groupId>
-        <version>6.1.SP2</version>
+        <version>6.1.SP3-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
 
     <groupId>io.quarkus</groupId>
     <artifactId>quarkus-spring-context-api</artifactId>
-    <version>6.1.SP2</version>
+    <version>6.1.SP3-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
