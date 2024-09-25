@@ -87,6 +87,7 @@
                                         <include>org/springframework/util/MimeTypeUtils**</include>
                                         <include>org/springframework/util/PriorityOrdered**</include>
                                         <include>org/springframework/util/ResourceUtils**</include>
+                                        <include>org/springframework/aot/hint/annotation/**</include>
                                     </includes>
                                     <artifact>org.springframework:spring-core</artifact>
                                 </filter>
