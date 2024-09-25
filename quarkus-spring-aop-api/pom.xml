@@ -73,7 +73,6 @@
                                         <include>org/springframework/aop/support/AbstractPointcutAdvisor**</include>
                                         <include>org/springframework/aop/target/EmptyTargetSource**</include>
                                         <include>org/springframework/aop/target/SingletonTargetSource**</include>
-                                        <include>org/springframework/aot/hint/annotation/**</include>
                                     </includes>
                                 </filter>
                             </filters>
