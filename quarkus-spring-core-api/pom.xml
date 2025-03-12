@@ -65,6 +65,8 @@
                                         <include>org/springframework/util/ObjectUtils**</include>
                                         <include>org/springframework/util/ReflectionUtils**</include>
                                         <include>org/springframework/util/StringUtils**</include>
+                                        <include>org/springframework/util/MultiToSingleValueMapAdapter**</include>
+                                        <include>org/springframework/util/SingleToMultiValueMapAdapter**</include>
                                         <include>org/springframework/core/Conventions**</include>
                                         <include>org/springframework/core/DecoratingProxy**</include>
                                         <include>org/springframework/core/NestedIOException**</include>
