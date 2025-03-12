@@ -50,6 +50,7 @@
                                         <include>org/springframework/http/ResponseEntity**</include>
                                         <include>org/springframework/http/ProblemDetail**</include>
                                         <include>org/springframework/http/DefaultHttpStatusCode**</include>
+                                        <include>org/springframework/http/ETag**</include>
                                         <include>org/springframework/web/SpringServletContainerInitializer**</include>
                                         <include>org/springframework/web/ErrorResponseException**</include>
                                         <include>org/springframework/web/ErrorResponse**</include>
