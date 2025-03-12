@@ -4,7 +4,7 @@
 
   <groupId>io.quarkus</groupId>
   <artifactId>quarkus-spring-api</artifactId>
-  <version>6.2.SP1-SNAPSHOT</version>
+  <version>6.2.SP1</version>
 
   <name>Spring dependencies for Quarkus Spring extensions</name>
   <description>The minimum dependencies to reduce the footprint of Quarkus applications using the Spring DI extension</description>
@@ -30,7 +30,7 @@
     <url>https://github.com/quarkusio/quarkus-spring-api</url>
     <connection>scm:git:git@github.com:quarkusio/quarkus-spring-api.git</connection>
     <developerConnection>scm:git:git@github.com:quarkusio/quarkus-spring-api.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>6.2.SP1</tag>
   </scm>
 
   <properties>
