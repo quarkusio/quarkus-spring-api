@@ -5,12 +5,12 @@
     <name>Spring Beans dependencies</name>
     <groupId>io.quarkus</groupId>
     <artifactId>quarkus-spring-beans-api</artifactId>
-    <version>6.2.SP3</version>
+    <version>6.2.SP4-SNAPSHOT</version>
 
     <parent>
         <artifactId>quarkus-spring-api</artifactId>
         <groupId>io.quarkus</groupId>
-        <version>6.2.SP3</version>
+        <version>6.2.SP4-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
 
