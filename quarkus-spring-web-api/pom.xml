@@ -8,6 +8,7 @@
         <version>6.2.SP3-SNAPSHOT</version>
     </parent>
 
+    <name>Spring Web dependencies</name>
     <groupId>io.quarkus</groupId>
     <artifactId>quarkus-spring-web-api</artifactId>
     <version>6.2.SP3-SNAPSHOT</version>
