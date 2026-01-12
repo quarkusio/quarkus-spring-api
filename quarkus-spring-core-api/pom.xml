@@ -9,6 +9,7 @@
         <relativePath>../</relativePath>
     </parent>
 
+    <name>Spring Core dependencies</name>
     <groupId>io.quarkus</groupId>
     <artifactId>quarkus-spring-core-api</artifactId>
     <version>6.2.SP3-SNAPSHOT</version>
