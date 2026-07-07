@@ -1,4 +1,4 @@
 release:
-  current-version: "6.2.SP3"
-  next-version: "6.2.SP4-SNAPSHOT"
+  current-version: "7.0"
+  next-version: "7.0.SP1-SNAPSHOT"
 
