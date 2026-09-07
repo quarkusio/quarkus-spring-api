@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-spring-api</artifactId>
+        <version>7.0.SP2-SNAPSHOT</version>
+    </parent>
+
+    <name>Spring Messaging dependencies</name>
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-spring-messaging-api</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-messaging</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createSourcesJar>true</createSourcesJar>
+                            <artifactSet>
+                                <includes>
+                                    <include>org.springframework:spring-messaging</include>
+                                </includes>
+                            </artifactSet>
+                            <filters>
+                                <filter>
+                                    <artifact>org.springframework:spring-messaging</artifact>
+                                    <includes>
+                                        <!-- Used in Quarkus JMS -->
+                                        <include>org/springframework/messaging/Message.**</include>
+                                        <include>org/springframework/messaging/MessageHeaders.**</include>
+                                        <include>org/springframework/messaging/MessageChannel.**</include>
+                                        <include>org/springframework/messaging/support/GenericMessage.**</include>
+                                        <include>org/springframework/messaging/support/MessageBuilder.**</include>
+                                        <include>org/springframework/messaging/support/MessageHeaderAccessor.**</include>
+                                        <include>org/springframework/messaging/handler/annotation/Header.**</include>
+                                        <include>org/springframework/messaging/handler/annotation/Headers.**</include>
+                                        <include>org/springframework/messaging/handler/annotation/Payload.**</include>
+                                        <include>org/springframework/messaging/handler/annotation/SendTo.**</include>
+                                        <include>org/springframework/messaging/handler/annotation/ValueConstants.**</include>
+                                        <include>org/springframework/messaging/MessagingException.**</include>
+                                        <include>org/springframework/messaging/converter/MessageConverter.**</include>
+                                        <include>org/springframework/messaging/core/MessagePostProcessor.**</include>
+                                    </includes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

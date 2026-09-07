@@ -51,6 +51,8 @@
     <module>quarkus-spring-web-api</module>
     <module>quarkus-spring-webmvc-api</module>
     <module>quarkus-spring-aop-api</module>
+    <module>quarkus-spring-jms-api</module>
+    <module>quarkus-spring-messaging-api</module>
   </modules>
 
 <dependencyManagement>
@@ -83,6 +85,16 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-aop</artifactId>
+      <version>${spring-framework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jms</artifactId>
+      <version>${spring-framework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-messaging</artifactId>
       <version>${spring-framework.version}</version>
     </dependency>
   </dependencies>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-spring-api</artifactId>
+        <version>7.0.SP2-SNAPSHOT</version>
+    </parent>
+
+
+    <name>Spring JMS dependencies</name>
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-spring-jms-api</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jms</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createSourcesJar>true</createSourcesJar>
+                            <artifactSet>
+                                <includes>
+                                    <include>org.springframework:spring-jms</include>
+                                </includes>
+                            </artifactSet>
+                            <filters>
+                                <filter>
+                                    <artifact>org.springframework:spring-jms</artifact>
+                                    <includes>
+                                        <!-- Used in Quarkus JMS -->
+                                        <include>org/springframework/jms/annotation/JmsListener.**</include>
+                                        <include>org/springframework/jms/annotation/JmsListeners.**</include>
+                                        <include>org/springframework/jms/core/JmsClient**</include>
+                                        <include>org/springframework/jms/listener/adapter/JmsResponse**</include>
+                                        <include>org/springframework/jms/support/destination/DestinationResolver.**</include>
+                                    </includes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
