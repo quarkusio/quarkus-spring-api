@@ -48,7 +48,7 @@
                                         <include>org/springframework/messaging/MessageChannel.**</include>
                                         <include>org/springframework/messaging/support/GenericMessage.**</include>
                                         <include>org/springframework/messaging/support/MessageBuilder.**</include>
-                                        <include>org/springframework/messaging/support/MessageHeaderAccessor.**</include>
+                                        <include>org/springframework/messaging/support/MessageHeaderAccessor**</include>
                                         <include>org/springframework/messaging/handler/annotation/Header.**</include>
                                         <include>org/springframework/messaging/handler/annotation/Headers.**</include>
                                         <include>org/springframework/messaging/handler/annotation/Payload.**</include>

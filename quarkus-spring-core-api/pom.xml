@@ -83,6 +83,8 @@
                                         <include>org/springframework/lang/Nullable**</include>
                                         <include>org/springframework/lang/NonNull**</include>
                                         <include>org/springframework/util/Assert**</include>
+                                        <include>org/springframework/util/AlternativeJdkIdGenerator**</include>
+                                        <include>org/springframework/util/IdGenerator**</include>
                                         <include>org/springframework/util/InvalidMimeTypeException**class</include>
                                         <include>org/springframework/util/LinkedCaseInsensitiveMap**</include>
                                         <include>org/springframework/util/MimeType**</include>
